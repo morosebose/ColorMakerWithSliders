@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ColorMakerWithSliders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,70 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frd-Rw-F7O">
+                                <rect key="frame" x="190" y="355" width="220" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ed-5g-VP7">
+                                <rect key="frame" x="233" y="270" width="134" height="59"/>
+                                <color key="backgroundColor" red="1" green="0.78202097039999996" blue="0.36040296049999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nub-ur-A7X">
+                                <rect key="frame" x="190" y="42" width="220" height="220"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9YW-4J-kOC">
+                                        <rect key="frame" x="51" y="41" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorDisplay:" destination="vXZ-lx-hvc" eventType="valueChanged" id="UNw-Ce-ihC"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-lh-vJW">
+                                        <rect key="frame" x="51" y="95" width="118" height="31"/>
+                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorDisplay:" destination="vXZ-lx-hvc" eventType="valueChanged" id="0N6-7h-oso"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bkg-gf-9Qg">
+                                        <rect key="frame" x="51" y="149" width="118" height="31"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorDisplay:" destination="vXZ-lx-hvc" eventType="valueChanged" id="iQz-mT-qWn"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="bkg-gf-9Qg" secondAttribute="centerX" id="9wh-6n-xfb"/>
+                                    <constraint firstAttribute="centerX" secondItem="9YW-4J-kOC" secondAttribute="centerX" id="UHJ-Xn-6gr"/>
+                                    <constraint firstAttribute="centerX" secondItem="Fk6-lh-vJW" secondAttribute="centerX" id="e8U-ZZ-FHS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="7ed-5g-VP7" secondAttribute="centerX" id="1Rb-9K-6eN"/>
+                            <constraint firstItem="7ed-5g-VP7" firstAttribute="top" secondItem="nub-ur-A7X" secondAttribute="bottom" constant="8" symbolic="YES" id="2li-ma-Wmq"/>
+                            <constraint firstAttribute="centerX" secondItem="7ed-5g-VP7" secondAttribute="centerX" id="HL8-pw-HzH"/>
+                            <constraint firstAttribute="centerY" secondItem="7ed-5g-VP7" secondAttribute="centerY" id="NSA-k4-kko"/>
+                            <constraint firstAttribute="centerX" secondItem="nub-ur-A7X" secondAttribute="centerX" id="XMy-du-u8G"/>
+                            <constraint firstAttribute="centerX" secondItem="Frd-Rw-F7O" secondAttribute="centerX" id="Y78-Og-fFl"/>
+                            <constraint firstAttribute="centerY" secondItem="7ed-5g-VP7" secondAttribute="centerY" id="Yrc-rf-7i2"/>
+                            <constraint firstItem="Frd-Rw-F7O" firstAttribute="top" secondItem="7ed-5g-VP7" secondAttribute="bottom" constant="26" id="q5P-LE-Xa3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="bkg-gf-9Qg" id="e40-Xy-36h"/>
+                        <outlet property="colorDisplay" destination="Frd-Rw-F7O" id="UYZ-TR-HxD"/>
+                        <outlet property="greenSlider" destination="Fk6-lh-vJW" id="zL7-iT-2v6"/>
+                        <outlet property="redSlider" destination="9YW-4J-kOC" id="xzl-rg-u9L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="345" y="423"/>
         </scene>
     </scenes>
 </document>
